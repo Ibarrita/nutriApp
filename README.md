@@ -1,6 +1,9 @@
 # Documentación de la aplicación
 ## Objetivo
-Una apliación web para cosas relacionadas con la nutrición como el analisis de nutrición, recetas de comida, busqueda de recetas saludables, etc.
+- Crear una aplicación web de nutrición.
+- Usar una API de nutrición.
+- Mostrar habitos de consumo de alimentos.
+- Mostrar recetas saludables.
 ## Integrantes
 ![José](jose.jpg)
 
