@@ -8,4 +8,5 @@
 ![José](jose.jpg)
 
 José Carlos Ibarra Aguayo
+
 Correo: 24308060610005@cetis61.edu.mx 
