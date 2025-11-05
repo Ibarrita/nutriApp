@@ -1,13 +1,179 @@
-{% extends "base.html" %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NutriVida</title>
 
-{% block content %}
-<div class="row bg-success-subtle">
-    <div class="col-6">
-        <h1>algo</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis pariatur aspernatur possimus molestias ratione est fugiat eum blanditiis voluptatem, magni, a neque deserunt ducimus. Neque, culpa. Blanditiis facere inventore tenetur!</p>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg" style="background-color:#1B8E52;">
+    <div class="container">
+        <a class="navbar-brand text-white fw-bold" href="#">NutriVida</a>
+        <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="menu">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a href="#" class="nav-link text-white">Inicio</a></li>
+                <li class="nav-item"><a href="#" class="nav-link text-white">Objetivos</a></li>
+                <li class="nav-item"><a href="#" class="nav-link text-white">Planes</a></li>
+                <li class="nav-item"><a href="#" class="nav-link text-white">Contacto</a></li>
+            </ul>
+        </div>
     </div>
-    <div class="col-6">
-        <img src="../static/telefono.png" alt="Un telefono xd">
+</nav>
+
+<!-- SECCIÓN PRINCIPAL (más vistosa) -->
+<section class="py-5" style="background: linear-gradient(to right, #69e0a2, #4680b3);">
+    <div class="container">
+        <div class="row align-items-center">
+            
+            <!-- TEXTO -->
+            <div class="col-md-6">
+            <h1 class="fw-bold mb-3">
+                Transformando tu <span style="color:#2E8B57;">Bienestar</span><br>
+                a través de la Innovación Nutricional
+            </h1>
+
+            <p class="text-secondary mb-4">
+                Ayudamos a miles de personas a lograr sus objetivos nutricionales
+                con herramientas simples, efectivas y adaptadas a ti.
+            </p>
+
+            <a class="btn btn-success btn-lg px-4" href="#">Comenzar gratis</a><br>
+            <small class="d-block mt-2">¿Ya tienes cuenta? <a href="#">Iniciar Sesión</a></small>
+        </div>
+
+            <!-- IMAGEN -->
+            <div class="col-lg-6 text-center mt-4 mt-lg-0">
+                <img src="app.png"
+                     class="img-fluid rounded"
+                     alt="Nutrición saludable">
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- seccion 2-->
+<div style="background-color:#E9F7EF;">
+    <div class="container py-5">
+        <div class="row align-items-center">
+
+            <!-- IMAGEN -->
+            <div class="col-md-6 text-center mb-4 mb-md-0">
+                <img src="https://img.freepik.com/foto-gratis/ensalada-fresca-verduras_144627-14752.jpg"
+                     class="img-fluid rounded shadow-sm" alt="comida saludable">
+            </div>
+
+            <!-- TEXTO -->
+            <div class="col-md-6">
+                <h3 class="fw-bold" style="color:#1D7ED1;">Alcanza tus objetivos</h3>
+                <p class="text-secondary">
+                    Lleva un control diario fácil de tus alimentos, analiza calorías y nutrientes,
+                    recibe recomendaciones y mejora tus hábitos desde cero, paso a paso.
+                </p>
+                <ul>
+                    <li>Registro rápido de comidas</li>
+                    <li>Contador automático de calorías</li>
+                    <li>Seguimiento de progreso</li>
+                    <li>Recomendaciones saludables</li>
+                </ul>
+            </div>
+
+        </div>2E8B57
     </div>
 </div>
-{% endblock %}
+
+<!-- SECCIÓN EXPLORA -->
+<section class="py-5" style="background-color: #E9F7EF;;">
+    <div class="container">
+        <h2 class="text-center fw-bold mb-5" style="color: #2E8B57;">Explora las herramientas</h2>
+
+        <div class="row g-4">
+
+            <div class="col-md-4">
+                <div class="card border-0 shadow-sm h-100">
+                    <img src="https://img.freepik.com/vector-gratis/concepto-contador-calorias_23-2148490082.jpg" class="card-img-top" alt="Registro de comidas">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold" style="color: #1B8E52;">Registro de Comidas</h5>
+                        <p class="card-text">
+                            Lleva un control diario de lo que consumes para mantener una nutrición equilibrada.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card border-0 shadow-sm h-100">
+                    <img src="https://img.freepik.com/vector-gratis/ilustracion-concepto-plan-comidas_114360-1875.jpg" class="card-img-top" alt="Plan de alimentación">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold" style="color: #1B8E52;">Planes Personalizados</h5>
+                        <p class="card-text">
+                            Obtén recomendaciones según tus objetivos: bajar de peso, ganar masa o mantenerte saludable.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card border-0 shadow-sm h-100">
+                    <img src="https://img.freepik.com/vector-gratis/ilustracion-concepto-seguimiento-habitos_114360-15745.jpg" class="card-img-top" alt="Seguimiento del progreso">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold" style="color: #1B8E52;">Seguimiento del Progreso</h5>
+                        <p class="card-text">
+                            Observa tu evolución con estadísticas visuales fáciles de interpretar.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<div style="background-color:#E9F7EF;">
+    <div class="container py-5">
+        <div class="row align-items-center">
+
+            <!-- IMAGEN -->
+            <div class="col-md-6 text-center mb-4 mb-md-0">
+                <img src="https://img.freepik.com/foto-gratis/ensalada-fresca-verduras_144627-14752.jpg"
+                     class="img-fluid rounded shadow-sm" alt="comida saludable">
+            </div>
+
+            <!-- TEXTO -->
+            <div class="col-md-6">
+                <h3 class="fw-bold" style="color:#2E8B57;">Alcanza tus objetivos</h3>
+                <p class="text-secondary">
+                    Lleva un control diario fácil de tus alimentos, analiza calorías y nutrientes,
+                    recibe recomendaciones y mejora tus hábitos desde cero, paso a paso.
+                </p>
+                <ul>
+                    <li>Registro rápido de comidas</li>
+                    <li>Contador automático de calorías</li>
+                    <li>Seguimiento de progreso</li>
+                    <li>Recomendaciones saludables</li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="text-center text-white py-3" style="background-color:#1B8E52;">
+    NutriVida © 2025 - Tu bienestar primero
+</footer>
+
+</body>
+</html>
+
+
