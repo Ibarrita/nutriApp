@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="container bg-success-subtle rounded-4 my-3">
+    <h1 class="mb-3 text-center">Iniciar sesión</h1>
+    <div class="m-4 bg-danger-subtle rounded-4">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <ul class=flashes>
+                {% for category, message in messages %}
+                    <li class="{{ category }}">{{ message }}</li>
+                {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+    </div>
+    <form action="/sesion" method="post">
+        <div class="row">
+            <div class="col mb-3">
+                <label for="email" class="form-label">Correo electrónico</label>
+                <input type="email" name="email" id="email" class="form-control" placeholder="name@example.com">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col mb-3">
+                <label for="password" class="form-label">Contraseña</label>
+                <input type="password" name="password" id="password" class="form-control">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-auto mb-3">
+                <input type="submit" class="btn btn-primary" value="Iniciar sesión">
+            </div>
+            <div class="col-auto mb-3">
+                <input type="reset" class="btn btn-primary" value="Restablecer">
+            </div>
+        </div>
+    </form>
+</section>
+{% endblock %}

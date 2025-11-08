@@ -18,7 +18,12 @@
                     <div class="navbar-nav">
                         <a class="nav-link active" aria-current="page" href="/">Inicio</a>
                         <a class="nav-link" href="#">Registrarse</a>
-                        <a class="nav-link" href="/signup">Iniciar sesión</a>
+                        <a class="nav-link" href="/signin">
+                        {% if session.get("logueado") == None %}
+                            Iniciar sesión
+                        {% else %}
+                            Cerrar sesión
+                        {% endif %}</a>
                     </div>
                 </div>
             </div>
