@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="container bg-success-subtle rounded-4 my-3">
+    <h1 class="mb-3 text-center">Registrarse</h1>
+    <div class="m-4 bg-danger-subtle rounded-4">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <ul class=flashes>
+                {% for category, message in messages %}
+                    <li class="{{ category }}">{{ message }}</li>
+                {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+    </div>
+    <form action="/register" method="post">
+        <div class="row">
+            <div class="col mb-3">
+                <label for="edad" class="form-label">Edad</label>
+                <input type="number" name="edad" id="edad" class="form-control">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col mb-3">
+                <label for="email" class="form-label">Correo electrónico</label>
+                <input type="email" name="email" id="email" class="form-control">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col mb-3">
+                <label for="password" class="form-label">Contraseña</label>
+                <input type="password" name="password" id="password" class="form-control">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col mb-3">
+                <label for="objetivos" class="form-label">Objetivos</label>
+                <select name="objetivos" id="objetivos" class="form-select">
+                    <option value="1">Bajar de peso</option>
+                    <option value="2">Aumentar masa muscular</option>
+                    <option value="3">Mantener peso</option>
+                    <option value="4">Mejorar digestión</option>
+                    <option value="5">Controlaar una condición</option>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col mb-3">
+                <label for="restricciones" class="form-label">Restricciones</label>
+                <select name="restricciones" id="restricciones" class="form-select">
+                    <option value="1">Alergias</option>
+                    <option value="2">Intolerancias</option>
+                    <option value="3">Dietas específicas</option>
+                    <option value="4">Alimentos que no me gustan</option>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col mb-3">
+                <label for="experiencia" class="form-label">Experiencia</label>
+                <select name="experiencia" id="experiencia" class="form-select">
+                    <option value="1">Ninguna</option>
+                    <option value="2">Chef aficionado</option>
+                    <option value="3">Principiante en la cocina</option>
+                    <option value="4">Profesional en la cocina</option>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-auto mb-3">
+                <input type="submit" value="Registrarse" class="btn btn-primary">
+            </div>
+            <div class="col-auto mb-3">
+                <input type="reset" value="Restablecer" class="btn btn-primary">
+            </div>
+        </div>
+    </form>
+</section>
+{% endblock %}

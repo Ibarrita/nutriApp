@@ -40,5 +40,24 @@ def sesion():
             return redirect(url_for("index"))
     return redirect(url_for("signin"))
 
+@app.route("/register", methods=["GET", "POST"])
+def register():
+    if request.method == "POST":
+        edad = request.form["edad"]
+        email = request.form["email"]
+        password = request.form["password"]
+        objetivos = request.form["objetivos"]
+        restricciones = request.form["restricciones"]
+        experiencia = request.form["experiencia"]
+        if not email or not password:
+            flash("Falta el correo electrónico o la contraseña", "error")
+        elif not edad:
+            flash("Falta la edad", "error")
+        else:
+            flash("Registro exitoso")
+            edad = int(edad)
+            return redirect(url_for("index"))
+    return render_template("register.html")
+
 if __name__ == "__main__":
     app.run(debug=True)
