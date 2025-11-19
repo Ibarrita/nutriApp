@@ -59,5 +59,9 @@ def register():
             return redirect(url_for("index"))
     return render_template("register.html")
 
+@app.route("/articulos")
+def articulos():
+    return render_template("articulos.html")
+
 if __name__ == "__main__":
     app.run(debug=True)
