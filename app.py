@@ -63,5 +63,9 @@ def register():
 def articulos():
     return render_template("articulos.html")
 
+@app.route("/herramientas")
+def herramientas():
+    return render_template("herramientas.html")
+
 if __name__ == "__main__":
     app.run(debug=True)
