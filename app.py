@@ -67,5 +67,16 @@ def articulos():
 def herramientas():
     return render_template("herramientas.html")
 
+@app.route("/herramientas/imc", methods=["GET", "POST"])
+def imc():
+    if request.method == "POST":
+        peso = float(request.form["peso"])
+        altura = float(request.form["altura"])
+        if not peso or not altura:
+            flash("Falta el peso o la altura.", "error")
+        else:
+            res = peso / (altura / 100) ** 2
+    return render_template("/herramientas/imc.html")
+
 if __name__ == "__main__":
     app.run(debug=True)

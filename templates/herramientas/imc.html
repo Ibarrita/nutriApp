@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="container bg-success-subtle rounded-4 my-3">
+    <h1>Calculadora de IMC</h1>
+    <div class="m-4 bg-danger-subtle rounded-4">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <ul class=flashes>
+                {% for category, message in messages %}
+                    <li class="{{ category }}">{{ message }}</li>
+                {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+    </div>
+    <form action="/herramientas/imc" method="post">
+        <div class="row">
+            <div class="col mb-3">
+                <label for="peso" class="form-label">Peso (kg)</label>
+                <input type="number" name="peso" id="peso" class="form-control" step="0.01" required>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col mb-3">
+                <label for="altura" class="form-label">Altura (cm)</label>
+                <input type="number" name="altura" id="altura" class="form-control" step="0.01" required>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-auto mb-3">
+                <input type="submit" value="Calcular" class="btn btn-primary">
+            </div>
+        </div>
+    </form>
+    {% if res is not none %}
+        <div class="row">
+            <div class="col mb-3">
+                <p>Tu IMC es: {{res}}</p>
+            </div>
+        </div>
+    {% endif %}
+</section>
+{% endblock %}
