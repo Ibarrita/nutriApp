@@ -11,6 +11,7 @@ USUARIOS = {
 
 app.config["SECRET_KEY"] = "algo"
 
+
 @app.route("/")
 def index():
     return render_template("index.html")
@@ -70,13 +71,31 @@ def herramientas():
 @app.route("/herramientas/imc", methods=["GET", "POST"])
 def imc():
     if request.method == "POST":
-        peso = float(request.form["peso"])
-        altura = float(request.form["altura"])
+        peso = float(request.form.get("peso"))
+        altura = float(request.form.get("altura"))
         if not peso or not altura:
             flash("Falta el peso o la altura.", "error")
         else:
-            res = peso / (altura / 100) ** 2
+            imc = peso / (altura / 100) ** 2
     return render_template("/herramientas/imc.html")
+
+@app.route("/herramientas/tmb", methods=["GET", "POST"])
+def tmb():
+    if request.method == "POST":
+        peso = float(request.form.get("peso"))
+        altura = float(request.form.get("altura"))
+        edad = int(request.form.get("edad"))
+        genero = request.form.get("Género")
+        if not peso or not altura:
+            flash("Falta el peso o la altura.", "error")
+        elif not edad:
+            flash("Falta la edad.", "error")
+        else:
+            if genero == "m":
+                tmb = (10 * peso) + (6.25 * altura) - (5 * edad) + 5
+            elif genero == "f":
+                tmb = (10 * peso) + (6.25 * altura) - (5 * edad) - 161
+    return render_template("/herramientas/tmb.html")
 
 if __name__ == "__main__":
     app.run(debug=True)

@@ -2,7 +2,7 @@
 
 {% block content %}
 <section class="container bg-success-subtle rounded-4 my-3">
-    <h1>Calculadora de IMC</h1>
+    <h1>Calculadora de TMB</h1>
     <div class="m-4 bg-danger-subtle rounded-4">
         {% with messages = get_flashed_messages(with_categories=true) %}
             {% if messages %}
@@ -14,17 +14,31 @@
             {% endif %}
         {% endwith %}
     </div>
-    <form action="/herramientas/imc" method="post">
+    <form action="/herramientas/tmb" method="post" id="tmb">
         <div class="row">
             <div class="col mb-3">
                 <label for="peso" class="form-label">Peso (kg)</label>
-                <input type="number" name="peso" id="peso" class="form-control" step="0.01" required>
+                <input type="number" name="peso" id="peso" class="form-control" required>
             </div>
         </div>
         <div class="row">
             <div class="col mb-3">
                 <label for="altura" class="form-label">Altura (cm)</label>
-                <input type="number" name="altura" id="altura" class="form-control" step="0.01" required>
+                <input type="number" name="altura" id="altura" class="form-control" required>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col mb-3">
+                <label for="edad" class="form-label">Edad</label>
+                <input type="number" name="edad" id="edad" class="form-control" required>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col mb-3">
+                <select class="form-select" aria-label="Género" form="tmb" aria-required="true">
+                    <option value="m">Masculino</option>
+                    <option value="f">Femenino</option>
+                </select>
             </div>
         </div>
         <div class="row">
@@ -33,10 +47,10 @@
             </div>
         </div>
     </form>
-    {% if imc is not none %}
+    {% if tmb is not none %}
         <div class="row">
             <div class="col mb-3">
-                <p>Tu IMC es: {{imc}}</p>
+                <p>Tu TMB es: {{tmb}}</p>
             </div>
         </div>
     {% endif %}
