@@ -97,5 +97,36 @@ def tmb():
                 tmb = (10 * peso) + (6.25 * altura) - (5 * edad) - 161
     return render_template("/herramientas/tmb.html")
 
+@app.route("/herramientas/gct", methods=["GET", "POST"])
+def tmb():
+    if request.method == "POST":
+        peso = float(request.form.get("peso"))
+        altura = float(request.form.get("altura"))
+        edad = int(request.form.get("edad"))
+        genero = request.form.get("Género")
+        actividad = request.form.get("Actividad")
+        if not peso or not altura:
+            flash("Falta el peso o la altura.", "error")
+        elif not edad:
+            flash("Falta la edad.", "error")
+        else:
+            if genero == "m":
+                tmb = (10 * peso) + (6.25 * altura) - (5 * edad) + 5
+                if actividad == "leve":
+                    gct = tmb * 1.55
+                elif actividad == "moderada":
+                    gct = tmb * 1.84
+                elif actividad == "intensa":
+                    gct = tmb * 2.2
+            elif genero == "f":
+                tmb = (10 * peso) + (6.25 * altura) - (5 * edad) - 161
+                if actividad == "leve":
+                    gct = tmb * 1.55
+                elif actividad == "moderada":
+                    gct = tmb * 1.84
+                elif actividad == "intensa":
+                    gct = tmb * 2.2
+    return render_template("/herramientas/tmb.html")
+
 if __name__ == "__main__":
     app.run(debug=True)

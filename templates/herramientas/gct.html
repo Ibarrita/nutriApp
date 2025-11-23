@@ -1,0 +1,67 @@
+{extends "base.html"}
+
+{block content}
+<section class="container bg-success-subtle rounded-4 my-3">
+    <h1>Calculadora de GCT</h1>
+    <div class="m-4 bg-danger-subtle rounded-4">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <ul class=flashes>
+                {% for category, message in messages %}
+                    <li class="{{ category }}">{{ message }}</li>
+                {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+    </div>
+    <form action="/herramientas/gct" method="post" id="gct">
+        <div class="row">
+            <div class="col mb-3">
+                <label for="peso" class="form-label">Peso (kg)</label>
+                <input type="number" name="peso" id="peso" class="form-control" required>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col mb-3">
+                <label for="altura" class="form-label">Altura (cm)</label>
+                <input type="number" name="altura" id="altura" class="form-control" required>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col mb-3">
+                <label for="edad" class="form-label">Edad</label>
+                <input type="number" name="edad" id="edad" class="form-control" required>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col mb-3">
+                <select class="form-select" aria-label="Género" form="tmb" aria-required="true">
+                    <option value="m">Masculino</option>
+                    <option value="f">Femenino</option>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col mb-3">
+                <select class="form-select" aria-label="Actividad" form="tmb" aria-required="true">
+                    <option value="leve">Leve</option>
+                    <option value="moderada">Moderada</option>
+                    <option value="intensa">Intensa</option>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col mb-3">
+                <input type="submit" value="Calcular" class="btn btn-primary">
+            </div>
+        </div>
+    </form>
+    {% if gct is not none %}
+        <div class="row">
+            <div class="col mb-3">
+                <p>Tu GCT es: {{gct}}</p>
+            </div>
+        </div>
+    {% endif %}
+</section>
+{endblock}
