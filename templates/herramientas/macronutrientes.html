@@ -14,7 +14,7 @@
             {% endif %}
         {% endwith %}
     </div>
-    <form action="/herramientas/gct" method="post" id="gct">
+    <form action="/herramientas/macronutrientes" method="post" id="macro">
         <div class="row">
             <div class="col mb-3">
                 <label for="peso" class="form-label">Peso (kg)</label>
@@ -35,7 +35,7 @@
         </div>
         <div class="row">
             <div class="col mb-3">
-                <select class="form-select" aria-label="Género" form="gct" aria-required="true">
+                <select class="form-select" aria-label="Género" form="macro" aria-required="true">
                     <option value="m">Masculino</option>
                     <option value="f">Femenino</option>
                 </select>
@@ -43,7 +43,7 @@
         </div>
         <div class="row">
             <div class="col mb-3">
-                <select class="form-select" aria-label="Actividad" form="gct" aria-required="true">
+                <select class="form-select" aria-label="Actividad" form="macro" aria-required="true">
                     <option value="leve">Leve</option>
                     <option value="moderada">Moderada</option>
                     <option value="intensa">Intensa</option>
@@ -56,7 +56,7 @@
             </div>
         </div>
     </form>
-    {% if gct is not none %}
+    {% if macro is not none %}
         <div class="row">
             <div class="col mb-3">
                 <p>Tu GCT es: {{gct}}</p>
