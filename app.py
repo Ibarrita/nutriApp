@@ -70,6 +70,7 @@ def herramientas():
 
 @app.route("/herramientas/imc", methods=["GET", "POST"])
 def imc():
+    imc = None
     if request.method == "POST":
         peso = float(request.form.get("peso"))
         altura = float(request.form.get("altura"))
@@ -77,10 +78,11 @@ def imc():
             flash("Falta el peso o la altura.", "error")
         else:
             imc = peso / (altura / 100) ** 2
-    return render_template("/herramientas/imc.html")
+    return render_template("/herramientas/imc.html", imc=imc)
 
 @app.route("/herramientas/tmb", methods=["GET", "POST"])
 def tmb():
+    tmb = None
     if request.method == "POST":
         peso = float(request.form.get("peso"))
         altura = float(request.form.get("altura"))
@@ -95,10 +97,11 @@ def tmb():
                 tmb = (10 * peso) + (6.25 * altura) - (5 * edad) + 5
             elif genero == "f":
                 tmb = (10 * peso) + (6.25 * altura) - (5 * edad) - 161
-    return render_template("/herramientas/tmb.html")
+    return render_template("/herramientas/tmb.html", tmb=tmb)
 
 @app.route("/herramientas/gct", methods=["GET", "POST"])
-def tmb():
+def gct():
+    gct = None
     if request.method == "POST":
         peso = float(request.form.get("peso"))
         altura = float(request.form.get("altura"))
@@ -126,7 +129,7 @@ def tmb():
                     gct = tmb * 1.84
                 elif actividad == "intensa":
                     gct = tmb * 2.2
-    return render_template("/herramientas/tmb.html")
+    return render_template("/herramientas/gct.html", gct=gct)
 
 if __name__ == "__main__":
     app.run(debug=True)

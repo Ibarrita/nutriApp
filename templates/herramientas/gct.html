@@ -1,6 +1,6 @@
-{extends "base.html"}
+{% extends "base.html" %}
 
-{block content}
+{% block content %}
 <section class="container bg-success-subtle rounded-4 my-3">
     <h1>Calculadora de GCT</h1>
     <div class="m-4 bg-danger-subtle rounded-4">
@@ -35,6 +35,7 @@
         </div>
         <div class="row">
             <div class="col mb-3">
+                <label for="Género" class="form-label">Género</label>
                 <select class="form-select" aria-label="Género" form="gct" aria-required="true">
                     <option value="m">Masculino</option>
                     <option value="f">Femenino</option>
@@ -64,4 +65,4 @@
         </div>
     {% endif %}
 </section>
-{endblock}
+{% endblock %}
