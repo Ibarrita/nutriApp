@@ -87,7 +87,7 @@ def tmb():
         peso = float(request.form.get("peso"))
         altura = float(request.form.get("altura"))
         edad = int(request.form.get("edad"))
-        genero = request.form.get("Género")
+        genero = request.form.get("genero")
         if not peso or not altura:
             flash("Falta el peso o la altura.", "error")
         elif not edad:
@@ -106,8 +106,8 @@ def gct():
         peso = float(request.form.get("peso"))
         altura = float(request.form.get("altura"))
         edad = int(request.form.get("edad"))
-        genero = request.form.get("Género")
-        actividad = request.form.get("Actividad")
+        genero = request.form.get("genero")
+        actividad = request.form.get("actividad")
         if not peso or not altura:
             flash("Falta el peso o la altura.", "error")
         elif not edad:
