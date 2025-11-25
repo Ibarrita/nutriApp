@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request, redirect, url_for, flash, session
+import requests
 
 app = Flask(__name__)
 
@@ -10,6 +11,9 @@ USUARIOS = {
 }
 
 app.config["SECRET_KEY"] = "algo"
+
+API = "https://api.spoonacular.com/recipes/"
+KEY = "bfb179e20d8e4eb9bafa8bf135f88bca"
 
 
 @app.route("/")
