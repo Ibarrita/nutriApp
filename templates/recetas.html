@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="container bg-success-subtle rounded-4 my-3">
+    <div class="m-4 bg-danger-subtle rounded-4">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <ul class=flashes>
+                {% for category, message in messages %}
+                    <li class="{{ category }}">{{ message }}</li>
+                {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+    </div>
+    <form action="/search" method="post">
+        <div class="row my-3">
+            <div class="col-auto my-3">
+                <label for="recipe" class="form-label">Buscador</label>
+            </div>
+            <div class="col-auto my-3">
+                <input type="text" name="recipe" id="recipe" class="form-control" required>
+            </div>
+            <div class="col-auto my-3">
+                <input type="submit" value="Buscar" class="btn btn-primary">
+            </div>
+        </div>
+    </form>
+</section>
+{% endblock %}

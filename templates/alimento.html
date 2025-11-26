@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="container">
+    <div class="card my-5">
+        <img src="{{recipe.image}}" class="card-img-top" alt="{{recipe.title}}">
+        <div class="card-body text-center">
+            <h5 class="card-title">{{recipe.title}}</h5>
+        </div>
+    </div>
+</section>
+{% endblock %}
