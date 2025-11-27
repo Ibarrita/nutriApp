@@ -147,7 +147,7 @@ def search():
         flash("Por favor, ingresa un alimento", "error")
         return redirect(url_for("recetas"))
     try:
-        response = requests.get(f"{API}?apiKey={KEY}&query={recipe_name}&maxFat=25&number=1")
+        response = requests.get(f"{API}/complexSearch?apiKey={KEY}&query={recipe_name}&maxFat=25&number=1")
         
         if response.status_code == 200:
             recipe_data = response.json()
@@ -167,6 +167,43 @@ def search():
     except requests.exceptions.RequestException as e:
         flash("No se pudo contactar con la API", "error")
         return redirect(url_for("recetas"))
+    
+@app.route("/analizador")
+def analizador():
+    return render_template("analizador.html")
+
+@app.route("/analizar", methods=["GET", "POST"])
+def analizar():
+    analisis = None
+    error = None
+    if request.method == "POST":
+        tipo_analisis = request.form.get("tipo_analisis")
+        
+        if tipo_analisis == "manual":
+            titulo = request.form.get("titulo", "")
+            porciones = request.form.get("porciones", "")
+            ingredientes = request.form.get("ingredientes", "").split("\n")
+            
+            url = f"{API}/analyze"
+            params = {"apiKey": KEY,
+                    "includeNutrition": True,
+                    "language": "en"}
+            
+            data = {
+                "title": titulo,
+                "ingredients": [ing for ing in ingredientes if ing.strip()],
+                "servings": porciones,
+            }
+            
+            try:
+                response = requests.post(url, params=params, json=data)
+                analisis = response.json()
+            except requests.exceptions.RequestException as e:
+                print(f"Error analizando receta: {e}")
+                return None
+            if not analisis:
+                error = "No se pudo analizar la receta. Verifica los datos e intenta nuevamente"
+        return render_template("analizador.html", analisis=analisis, error=error)
 
 if __name__ == "__main__":
     app.run(debug=True)
