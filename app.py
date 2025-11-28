@@ -1,6 +1,8 @@
 from flask import Flask, render_template, request, redirect, url_for, flash, session, jsonify
 import requests
 
+# Recordatorio: Redondear los resultados de las calculadoras round()
+
 app = Flask(__name__)
 
 USUARIOS = {

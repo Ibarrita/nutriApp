@@ -15,8 +15,13 @@
                 <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                    <div class="navbar-nav">
+                    <div class="navbar-nav ms-auto">
                         <a class="nav-link active text-white" aria-current="page" href="/">Inicio</a>
+                        <a class="nav-link text-white" href="/articulos">Artículos</a>
+                        {% if session.get("logueado") is not none%}
+                            <a class="nav-link text-white" href="/herramientas">Herramientas</a>
+                            <a class="nav-link text-white" href="/recetas">Recetas</a>
+                        {% endif %}
                         <a class="nav-link text-white" href="/register">Registrarse</a>
                         <a class="nav-link text-white" href="/signin">
                         {% if session.get("logueado") is none %}
@@ -24,9 +29,6 @@
                         {% else %}
                             Cerrar sesión
                         {% endif %}</a>
-                        <a class="nav-link text-white" href="/articulos">Artículos</a>
-                        <a class="nav-link text-white" href="/herramientas">Herramientas</a>
-                        <a class="nav-link text-white" href="/recetas">Buscar</a>
                     </div>
                 </div>
             </div>
