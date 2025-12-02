@@ -5,6 +5,7 @@ import requests
 #Ibarra no redondeo numero
 #ibarra no agrego logica de calculadora macronutrientes
 #ibarra no agrego logica para ingredientes y procedimiento de recetas
+#a mi (ibarra) se me olvido subir su trabajo a github
 
 app = Flask(__name__)
 
