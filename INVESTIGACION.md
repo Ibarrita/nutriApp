@@ -1,4 +1,5 @@
 # Aplicación nutricional
+Cabe recalcar que la API que investigamos dejo de ofrecer planes gratuitos, asi que usamos otra
 ## Introducción
 ### Objetivos de la investigación
 Se llevó a cabo una investigación de 3 aplicaciones nutricionales tomando en cuenta sus funcionalidades principales, la experiencia que vive el usuario al usarse, si tienen algún costo, los puntos débiles, fuertes y sus características, todo esto fue con el propósito de conocer cómo funcionan y que nos ofrecen para poder obtener ideas. Con toda esta información recaudada nuestro objetivo principal y la razón por la cual estamos haciendo todo este proceso es diseñar una aplicación sencilla pero que sea útil, para ayudar a las personas a comer de una manera más saludable, decidimos enfocarnos en la alimentación y nutrición porque México ocupa actualmente el primer lugar mundial en obesidad lo cual es un problema serio, para poder saber nosotros cual era la mejor manera de llegar al público y que esta propuesta fuera realmente útil se llevó a cabo una encuesta para conocer la opinión y las necesidades de los usuarios, de esta manera detectamos los problemas más comunes y conocemos que funciones, diseños y herramientas son más útiles y atractivas para el público.
@@ -91,4 +92,5 @@ Síntesis de aprendizajes: Existe una gran variedad de aplicaciones de salud y f
 Que ayude a las personas a tener hábitos saludables, tales como bajar de peso, mantener el peso, dieta balanceada, ganar músculo, etc.
 
 ### Recomendaciones para la futura aplicación
+
 Un diseño amigable, que sea fácil de usar y que ofrezca solo lo necesario.
