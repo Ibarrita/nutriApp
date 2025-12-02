@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+
+{% block content %}
+<body class="bg-light">
+
+<div class="container py-5">
+
+    <h2 class="text-center mb-4">Resultados del Análisis</h2>
+
+    {% if error %}
+    <div class="alert alert-danger text-center">{{ error }}</div>
+    {% endif %}
+
+    {% if analisis %}
+    <div class="card shadow-sm mb-4">
+        <div class="card-body">
+
+            <h4 class="text-center">{{ analisis.title }}</h4>
+            <p class="text-center text-muted">Porciones: {{ analisis.servings }}</p>
+
+            <h5>Ingredientes Detectados</h5>
+            <ul class="list-group mb-3">
+                {% for ing in analisis.ingredients %}
+                <li class="list-group-item">
+                    {{ ing.name }} — {{ ing.amount.metric.value }} {{ ing.amount.metric.unit }}
+                </li>
+                {% endfor %}
+            </ul>
+            <h5>Información Nutricional (por porción)</h5>
+
+            <div class="table-responsive">
+                <table class="table table-striped table-bordered mt-3">
+                    <thead class="table-success">
+                        <tr>
+                            <th>Nutriente</th>
+                            <th>Cantidad</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for nutrient in analisis.nutrition.nutrients %}
+                        <tr>
+                            <td>{{ nutrient.name }}</td>
+                            <td>{{ nutrient.amount }} {{ nutrient.unit }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+    {% endif %}
+
+    <div class="text-center">
+        <a href="{{ url_for('analizador') }}" class="btn btn-success">Analizar otra receta</a>
+    </div>
+
+</div>
+
+
+
+{% endblock %}

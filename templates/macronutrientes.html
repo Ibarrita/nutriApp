@@ -50,6 +50,19 @@
                 </select>
             </div>
         </div>
+
+        <div class="row">
+            <div class="mb-3">
+                <label for="objetivo" class="form-label titulo-verde">Objetivo principal</label>
+                <select class="form-select" id="actividad" name="actividad">
+                    <option selected>Selecciona tu objetivo</option>
+                    <option value="ganar">Ganar masa muscular</option>
+                    <option value="perder">Perder masa muscular</option>
+                    <option value="mantener">Mantener mi peso</option>
+                </select>
+            </div>
+        </div>
+
         <div class="row">
             <div class="col mb-3">
                 <input type="submit" value="Calcular" class="btn btn-primary">
@@ -59,7 +72,7 @@
     {% if macro is not none %}
         <div class="row">
             <div class="col mb-3">
-                <p>Tu GCT es: {{gct}}</p>
+                <p>Tu es: {{gct}}</p>
             </div>
         </div>
     {% endif %}

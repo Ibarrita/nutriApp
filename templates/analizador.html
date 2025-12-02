@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block content %}
+<body class="bg-light">
+
+<div class="container py-5">
+
+    <h2 class="text-center mb-4">Analizar Receta Manualmente</h2>
+
+    <div class="row justify-content-center">
+        <div class="col-md-7">
+
+            <div class="card shadow-sm">
+                <div class="card-body">
+
+                    <form action="{{ url_for('analizar') }}" method="POST">
+
+                        <input type="hidden" name="tipo_analisis" value="manual">
+
+                        <div class="mb-3">
+                            <label class="form-label">Título de la receta</label>
+                            <input type="text" name="titulo" class="form-control" placeholder="Ej: Ensalada de pollo" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Porciones</label>
+                            <input type="number" name="porciones" class="form-control" min="1" value="1" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Ingredientes (uno por línea)</label>
+                            <textarea name="ingredientes" class="form-control" rows="6" placeholder="1 taza de arroz
+                                2 huevos
+                                100 g de pollo" required></textarea>
+                        </div>
+
+                        <div class="text-center">
+                            <button class="btn btn-success w-100">Analizar Receta</button>
+                        </div>
+
+                    </form>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+{% endblock %}

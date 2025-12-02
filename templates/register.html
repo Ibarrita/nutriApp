@@ -1,8 +1,8 @@
 {% extends "base.html" %}
 
 {% block content %}
-<section class="container bg-success-subtle rounded-4 my-3">
-    <h1 class="mb-3 text-center">Registrarse</h1>
+<section class="container bg-success-subtle rounded-4 my-3 p-4">
+    <h1 class="text-center text-success mt-3 mb-3">Registrarse</h1>
     <div class="m-4 bg-danger-subtle rounded-4">
         {% with messages = get_flashed_messages(with_categories=true) %}
             {% if messages %}
@@ -69,10 +69,10 @@
         </div>
         <div class="row">
             <div class="col-auto mb-3">
-                <input type="submit" value="Registrarse" class="btn btn-primary">
+                <input type="submit" value="Registrarse" class="btn btn-success">
             </div>
             <div class="col-auto mb-3">
-                <input type="reset" value="Restablecer" class="btn btn-primary">
+                <input type="reset" value="Restablecer" class="btn btn-success">
             </div>
         </div>
     </form>

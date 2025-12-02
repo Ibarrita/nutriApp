@@ -1,16 +1,104 @@
 {% extends "base.html" %}
 
 {% block content %}
-<section class="container-fluid">
-    <div class="row bg-success-subtle">
-        <div class="col-md-6 col-sm-12">
-            <h1>NutriApp</h1>
-            <p>Bienvenido a NutriApp, este es el mejor lugar para las cosas relacionadas con tu nutrición.</p>
-            <p>Tenemos varias herramientas, como calculadoras que te ayudaran a conocer , un banco de recetas, </p>
+<section class="container-fluid bg-success-subtle py-5">
+    <div class="container">
+        <div class="row align-items-center">
+            
+            <div class="col-md-6 col-sm-12 mb-4">
+                <h1 class="display-4 fw-bold text-success">NutriApp</h1>
+                <h3 class="fw-semibold mb-3">¡Bienvenido!</h3>
+                <p class="lead">
+                    La herramienta ideal para conocer tu nutrición, descubrir recetas saludables
+                    y aprender hábitos que mejoran tu bienestar.
+                </p>
+                <p>
+                    Explora nuestras secciones creadas especialmente para ayudarte a mejorar tu
+                    salud de manera sencilla.
+                </p>
+            </div>
+
+            <div class="col-md-6 col-sm-12 text-center">
+                <img src="{{ url_for('static', filename='images/app.png') }}" 
+                     class="img-fluid rounded"
+                     style="max-height: 350px; object-fit: contain;"
+                     alt="NutriApp Imagen">
+            </div>
+
+         </div>
+    </div>
+</section>
+
+<section class="container py-5">
+    <h2 class="text-center text-success mb-4">Explora NutriApp</h2>
+
+    <div class="row g-4">
+
+        <div class="col-md-4 col-sm-12">
+            <div class="card h-100 shadow">
+                <img src="{{ url_for('static', filename='images/calculadoras.jpg') }}" 
+                     class="card-img-top" alt="Calculadoras">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Calculadoras Nutricionales</h5>
+                    <p class="card-text">Podrás obtener datos como tu IMC, tus calorías diarias recomendadas y otros valores 
+                               importantes para entender lo que tu cuerpo necesita.</p>
+                </div>
+            </div>
         </div>
-        <div class="col-md-6 col-sm-12">
-            <img src="{{url_for("static", filename="images/app.png")}}" class="img-fluid my-4" alt="Teléfono">
+
+        <div class="col-md-4 col-sm-12">
+            <div class="card h-100 shadow">
+                <img src="{{ url_for('static', filename='images/ejercicios.jpg') }}" 
+                     class="card-img-top" alt="ejercicio">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Ejercicios basicos</h5>
+                    <p class="card-text">En este módulo encontrarás una guía de ejercicios sencillos que puedes realizar en casa o en cualquier lugar.</p>
+                </div>
+            </div>
+        </div>
+
+         <div class="col-md-4 col-sm-12">
+            <div class="card h-100 shadow">
+                <img src="{{ url_for('static', filename='images/educacion.jpg') }}" 
+                     class="card-img-top" alt="Educación">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Educación Nutricional</h5>
+                    <p class="card-text">Podrás aprender a leer etiquetas, descubrir mitos y verdades, entender los macronutrientes y la importancia de la hidratación.</p>
+                </div>
+            </div>
         </div>
     </div>
 </section>
+
+<section class="container py-5">
+    <h2 class="text-center text-success mb-4">Inicia sesion para poder descubrir grandes herramientas</h2>
+
+    <div class="row g-4">
+
+        <div class="col-md-6 col-sm-12">
+            <div class="card h-100 shadow">
+                <img src="{{ url_for('static', filename='images/analizador.jpg') }}" 
+                     class="card-img-top" alt="Calculadoras">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Analizador de Recetas</h5>
+                    <p class="card-text">En este apartado podrás analizar cualquier receta o platillo ingresando sus ingredientes.
+                                La herramienta calculará automáticamente los nutrientes totales, como calorías, proteínas, grasas y más.Es una forma rápida y práctica de conocer qué tan equilibrada es tu comida.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-sm-12">
+            <div class="card h-100 shadow">
+                <img src="{{ url_for('static', filename='images/recetas saludables.jpg') }}" 
+                     class="card-img-top" alt="Calculadoras">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Recetas saludables</h5>
+                    <p class="card-text">Te daremos recetas saludables, faciles de preparar por si eres primeriso en la cocina y muy accesibles,
+                            con precios variados y la lista de productos con su nombre para que los encuentres facilmente en el supermercado.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 {% endblock %}

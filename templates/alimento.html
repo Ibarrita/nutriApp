@@ -1,12 +1,27 @@
 {% extends "base.html" %}
 
 {% block content %}
-<section class="container">
-    <div class="card my-5">
-        <img src="{{recipe.image}}" class="card-img-top" alt="{{recipe.title}}">
-        <div class="card-body text-center">
-            <h5 class="card-title">{{recipe.title}}</h5>
+<body class="bg-light">
+
+    <div class="container py-5">
+
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+
+                <div class="card shadow-sm">
+                    <img src="{{ recipe.image }}" class="card-img-top" alt="{{ recipe.title }}">
+                    
+                    <div class="card-body text-center">
+                        <h3 class="card-title">{{ recipe.title }}</h3>
+                    
+                    <a href="{{ url_for('recetas') }}" class="btn btn-success mt-3">Buscar otro alimento</a>
+                                                                                                          
+                </div>
+            </div>
+
         </div>
     </div>
-</section>
+
+</div>
+
 {% endblock %}

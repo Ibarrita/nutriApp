@@ -2,6 +2,9 @@ from flask import Flask, render_template, request, redirect, url_for, flash, ses
 import requests
 
 # Recordatorio: Redondear los resultados de las calculadoras round()
+#Ibarra no redondeo numero
+#ibarra no agrego logica de calculadora macronutrientes
+#ibarra no agrego logica para ingredientes y procedimiento de recetas
 
 app = Flask(__name__)
 
@@ -21,6 +24,10 @@ KEY = "bfb179e20d8e4eb9bafa8bf135f88bca"
 @app.route("/")
 def index():
     return render_template("index.html")
+
+@app.route("/macronutrientes")
+def macronutrientes():
+    return render_template("macronutrientes.html")
 
 @app.route("/signin")
 def signin():
@@ -205,7 +212,7 @@ def analizar():
                 return None
             if not analisis:
                 error = "No se pudo analizar la receta. Verifica los datos e intenta nuevamente"
-        return render_template("analizador.html", analisis=analisis, error=error)
+        return render_template("resultado.html", analisis=analisis, error=error)
 
 if __name__ == "__main__":
     app.run(debug=True)
